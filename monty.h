@@ -48,8 +48,39 @@ typedef struct vars_st
     unsigned int line_number;
 
 } vars;
-void nop(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number); /* print the data of nodes */
-int getinfo(char *buf, char *opcode, int *val);       /* getinfo from data */
-#endif                                                /* _MONTY_H_ */
+
+void (*get_opp(char *opcode))(stack_t **stack, unsigned int line_number);
+void freeAll(void);
+int start_vars(vars *vars);
+
+/* 2-math.c */
+
+void add(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void divide(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+
+/* 3-print.c */
+
+void pall(stack_t **stack, unsigned int line_number); /* print all the stack */
+void pint(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+
+/* 4-modify.c */
+
+void push(stack_t **stack, unsigned int line_number); /* push val into stack */
+void pop(stack_t **stack, unsigned int line_number);  /* print pop the top */
+void swap(stack_t **stack, unsigned int line_number); /* print swap the top and top-1*/
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+
+/* 5-misc.c */
+
+void nop(stack_t **stack, unsigned int line_number); /* no operation */
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+
+int getinfo(char *buf, char *opcode, int *val); /* getinfo from data */
+#endif                                          /* _MONTY_H_ */
