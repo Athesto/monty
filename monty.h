@@ -31,4 +31,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+int getinfo(char *buf, char *opcode, int *val); /* getinfo from data */
 #endif /* _MONTY_H_ */
