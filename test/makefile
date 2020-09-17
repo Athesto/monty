@@ -75,7 +75,7 @@ ll:
 5:
 	clear;
 	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/12.m
+	./test ../bytecodes/p5-nop.m
 
 #sub
 6:
