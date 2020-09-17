@@ -28,23 +28,23 @@ flags=-g -Wall -Wextra -Werror -pedantic
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/06.m
-add: 
+4: 
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/12.m
-sub:
+6:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/19.m
-mul:
+8:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/15.m
-div: 
+7: 
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/13.m
-mod:
+9:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/14.m
