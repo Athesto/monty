@@ -20,6 +20,10 @@ flags=-g -Wall -Wextra -Werror -pedantic
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/28.m
+12:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/31.m
 01:
 	clear;
 	gcc $(flags) ../*.c -o test
