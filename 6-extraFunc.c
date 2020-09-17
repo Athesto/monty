@@ -2,7 +2,7 @@
 
 /**
  * _isdigit - ?
- * @string: Num to validate
+ * @carac: Num to validate
  * Return: 0 or 1
  */
 int _isdigit(int carac)
