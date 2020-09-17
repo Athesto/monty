@@ -27,7 +27,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	/* check if stack is valid or if stack is empty */
 	if (!stack || !*stack)
 	{
-		printf("L%d: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
@@ -43,12 +43,12 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack)
 	{
-		printf("L%d: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (n < 0 || 127 < n)
 	{
-		printf("L%d: can't pchar, value out of range\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (*stack)->n);
@@ -86,9 +86,3 @@ void pstr(stack_t **stack, unsigned int line_number)
 		}
 	}
 }
-
-
-
-
-
-
