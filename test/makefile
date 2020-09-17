@@ -1,7 +1,36 @@
 flags=-g -Wall -Wextra -Werror -pedantic
 
 
-000:
+#Push alone
+006:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/00-pushAlone.m
+
+#null file
+005: 
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/00-nullFile.m
+#no value
+004:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/00-noValue.m
+
+#negative numbers
+003:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/00-negativeDigit.m
+
+#no function
+002:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/00-noFunction.m
+
+001:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/000.m
@@ -9,6 +38,13 @@ flags=-g -Wall -Wextra -Werror -pedantic
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/00.m
+#is digit
+0:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/00-isdigit.m
+
+
 #pint
 1:
 	clear;
@@ -74,6 +110,8 @@ flags=-g -Wall -Wextra -Werror -pedantic
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/31.m
+
+
 
 
 
