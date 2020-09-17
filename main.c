@@ -14,10 +14,7 @@ int main(int ac, char **av)
 
 	vars_t.line_number = 1;
 	if (ac != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n"), freeAll();
-		return (EXIT_FAILURE);
-	}
+		return (fprintf(stderr, "USAGE: monty file\n"), freeAll(), EXIT_FAILURE);
 	vars_t.file = fopen(av[1], "r");
 	while (!vars_t.file)
 	{
@@ -26,6 +23,11 @@ int main(int ac, char **av)
 	}
 	while (getline(&vars_t.buff, &vars_t.sizz, vars_t.file) != EOF)
 	{
+		if (vars_t.buff[0] == '\n')
+		{
+			vars_t.line_number++;
+			continue;
+		}
 		opcode = strtok(vars_t.buff, " \n\t\r");
 		if (opcode == NULL)
 			continue;
@@ -45,6 +47,5 @@ int main(int ac, char **av)
 		}
 		vars_t.line_number++;
 	}
-	freeAll();
-	return (EXIT_SUCCESS);
+	return (freeAll(), EXIT_SUCCESS);
 }

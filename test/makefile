@@ -1,6 +1,11 @@
 flags=-g -Wall -Wextra -Werror -pedantic
 
 
+ll:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/prueba.m
+
 #Push alone
 006:
 	clear;
@@ -12,11 +17,11 @@ flags=-g -Wall -Wextra -Werror -pedantic
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/00-nullFile.m
-#no value
+#no line
 004:
 	clear;
 	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/00-noValue.m
+	./test ../bytecodes/00-noLine.m
 
 #negative numbers
 003:
