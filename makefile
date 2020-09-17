@@ -1,3 +1,4 @@
 build:
 	gcc -g -Wall -Werror -Wextra -pedantic *.c -o monty
-	betty *.c
+	betty-style *.c
+	betty-doc *.c 1> /dev/null
