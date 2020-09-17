@@ -24,8 +24,13 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	/* check if stack is valid or if stack is empty */
+	if (!stack || !*stack)
+	{
+		printf("L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }
 /**
  * pchar - ?
