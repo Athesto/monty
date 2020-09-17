@@ -1,6 +1,6 @@
 #include "monty.h"
 #define BUFFSIZE 2048
-vars vars_t;
+
 /**
  * main - Principal fu
  * @ac: cant input
@@ -35,10 +35,9 @@ int main(int ac, char **av)
 			if (funct != NULL)
 				funct(&vars_t.h, vars_t.line_number);
 			else
-			{
-				fprintf(stderr, "L%u: unknown instruction %s\n", vars_t.line_number, opcode), freeAll();
-				return (EXIT_FAILURE);
-			}
+				return (fprintf(stderr, "L%u: unknown instruction %s\n",
+								vars_t.line_number, opcode),
+						freeAll(), EXIT_FAILURE);
 		}
 		vars_t.line_number++;
 	}

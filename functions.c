@@ -1,5 +1,5 @@
 #include "monty.h"
-vars vars_t;
+
 /**
  * get_opp - Functions Structure
  * @opcode: opcode

@@ -48,7 +48,7 @@ typedef struct vars_st
     unsigned int line_number;
 
 } vars;
-
+vars vars_t;
 void (*get_opp(char *opcode))(stack_t **stack, unsigned int line_number);
 void freeAll(void);
 int start_vars(vars *vars);
