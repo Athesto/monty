@@ -26,6 +26,8 @@ int main(int ac, char **av)
 	}
 	while (getline(&vars_t.buff, &vars_t.sizz, vars_t.file) != EOF)
 	{
+		if (vars_t.buff[0] == '\n')
+			continue;
 		opcode = strtok(vars_t.buff, " \n\t\r");
 		if (opcode[0] == '#')
 			continue;
@@ -35,9 +37,11 @@ int main(int ac, char **av)
 			if (funct != NULL)
 				funct(&vars_t.h, vars_t.line_number);
 			else
+			{
 				return (fprintf(stderr, "L%u: unknown instruction %s\n",
 								vars_t.line_number, opcode),
 						freeAll(), EXIT_FAILURE);
+			}
 		}
 		vars_t.line_number++;
 	}
