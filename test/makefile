@@ -1,50 +1,82 @@
 flags=-g -Wall -Wextra -Werror -pedantic
 
-1:
-	clear;
-	gcc $(flags) 1-strok.c ../getinfo.c
-	./a.out
-2:
+
+000:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/000.m
-02:
-	clear;
-	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/07.m
-4:
+00:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/00.m
-11:
-	clear;
-	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/28.m
-12:
-	clear;
-	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/31.m
-01:
+#pint
+1:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/06.m
+#pop
+2:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/07.m
+#swap
+3:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/09.m
+
+# add
 4: 
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/12.m
+#nop
+5:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/12.m
+
+#sub
 6:
 	clear;
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/19.m
-8:
-	clear;
-	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/15.m
+#div
 7: 
 	clear;
 	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/13.m
+	./test ../bytecodes/p7-div.m
+	./test ../bytecodes/p7-divZero.m
+
+
+#mul
+8:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/p8-mul.m
+#module
 9:
 	clear;
 	gcc $(flags) ../*.c -o test
-	./test ../bytecodes/14.m
+	./test ../bytecodes/p9-mod.m
+#comments 
+10:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/p10-comments.m
+#pchar
+11:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/28.m
+#pstr
+12:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/31.m
+
+
+
+
+
+
