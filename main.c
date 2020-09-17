@@ -27,9 +27,14 @@ int main(int ac, char **av)
 	while (getline(&vars_t.buff, &vars_t.sizz, vars_t.file) != EOF)
 	{
 		if (vars_t.buff[0] == '\n')
+		{
+			vars_t.line_number++;
 			continue;
+		}
 		opcode = strtok(vars_t.buff, " \n\t\r");
-		if (opcode[0] == '#')
+		if (opcode == NULL)
+			continue;
+		else if (opcode[0] == '#')
 			continue;
 		if (opcode)
 		{
