@@ -64,13 +64,16 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	if (!stack)
+	{
 		/* TODO invalid stack */
-		/* is a empty list? */
-		if (!runner)
-		{
-			printf("\n");
-			return;
-		}
+	}
+
+	/* is a empty list? */
+	if (!runner)
+	{
+		printf("\n");
+		return;
+	}
 
 	/*
 	 * check if n is not null
