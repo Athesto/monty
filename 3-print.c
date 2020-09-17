@@ -60,6 +60,35 @@ void pchar(stack_t **stack, unsigned int line_number)
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
+	stack_t *runner = *stack;
+
 	(void)line_number;
+	if (!stack)
+		/* TODO invalid stack */
+		/* is a empty list? */
+		if (!runner)
+		{
+			printf("\n");
+			return;
+		}
+
+	/*
+	 * check if n is not null
+	 */
+	while (runner->n)
+	{
+		printf("%c", runner->n);
+		runner = runner->next;
+		if (!runner || !(runner->n))
+		{
+			printf("\n");
+			return;
+		}
+	}
 }
+
+
+
+
+
+
