@@ -39,8 +39,19 @@ void pint(stack_t **stack, unsigned int line_number)
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	int n = (*stack)->n;
+
+	if (!stack || !*stack)
+	{
+		printf("L%d: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (n < 0 || 127 < n)
+	{
+		printf("L%d: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*stack)->n);
 }
 /**
  * pstr - ?
