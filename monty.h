@@ -82,5 +82,6 @@ void nop(stack_t **stack, unsigned int line_number); /* no operation */
 void stack(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);
 
+int _isdigit(int carac);
 int getinfo(char *buf, char *opcode, int *val); /* getinfo from data */
 #endif                                          /* _MONTY_H_ */
