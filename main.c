@@ -29,10 +29,11 @@ int main(int ac, char **av)
 			continue;
 		}
 		opcode = strtok(vars_t.buff, " \n\t\r");
-		if (opcode == NULL)
+		if (opcode == NULL || opcode[0] == '#')
+		{
+			vars_t.line_number++;
 			continue;
-		else if (opcode[0] == '#')
-			continue;
+		}
 		if (opcode)
 		{
 			funct = get_opp(opcode);
