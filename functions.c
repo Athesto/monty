@@ -3,7 +3,7 @@
 /**
  * get_opp - Functions Structure
  * @opcode: opcode
- * Return: ?
+ * Return: pointer to push/pall/pint/pop/swap/add
  */
 void (*get_opp(char *opcode))(stack_t **stack, unsigned int line_number)
 {
