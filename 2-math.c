@@ -16,9 +16,9 @@ void add(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 /**
- * sub - ?
-  * @stack: ?
- * @line_number: ?
+ * sub - substract top to the second value
+  * @stack: stack
+ * @line_number: line in the program
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
