@@ -33,7 +33,7 @@ void (*get_opp(char *opcode))(stack_t **stack, unsigned int line_number)
 	return (NULL);
 }
 /**
- * freeAll - ?
+ * freeAll - free pointers
  */
 void freeAll(void)
 {
