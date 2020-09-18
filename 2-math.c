@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-* add - ?
-* @stack: ?
-* @line_number: ?
+* add - add top of stack with the second
+* @stack: stack
+* @line_number: line number
  */
 void add(stack_t **stack, unsigned int line_number)
 {
