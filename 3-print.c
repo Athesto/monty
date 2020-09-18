@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * pall - ?
- * @stack: ?
- * @line_number: ?
+ * pall - print all
+ * @stack: stack
+ * @line_number: line number
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
