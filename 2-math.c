@@ -31,9 +31,9 @@ void sub(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 /**
- * mul - ?
-  * @stack: ?
- * @line_number: ?
+ * mul - multiplication
+  * @stack: stack
+ * @line_number: line number in the program
  */
 void mul(stack_t **stack, unsigned int line_number)
 {
