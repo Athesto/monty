@@ -67,9 +67,9 @@ void divide(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 /**
- * mod - ?
-  * @stack: ?
- * @line_number: ?
+ * mod - module
+  * @stack: stack
+ * @line_number: line number
  */
 void mod(stack_t **stack, unsigned int line_number)
 {
