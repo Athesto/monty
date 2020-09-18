@@ -46,9 +46,9 @@ void mul(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 /**
- * divide - ?
- * @stack: ?
- * @line_number: ?
+ * divide - divition
+ * @stack: stack
+ * @line_number: line number in the program
  */
 void divide(stack_t **stack, unsigned int line_number)
 {
