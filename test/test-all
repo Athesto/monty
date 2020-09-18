@@ -1,0 +1,51 @@
+#!/bin/bash
+
+
+GREEN="\e[32m"
+RED="\e[91m"
+MAG="\e[35m"
+RSTCOLOR="\e[0m"
+
+# input
+MFILEPATH="../bytecodes"
+rm -rf tmp
+mkdir tmp
+for file in $MFILEPATH/*
+do
+	MFILE=$(echo ${file} | cut -d '/' -f3)
+	if [[ $MFILE == 'README.md' ]]; then
+		continue
+	fi
+
+	exe="./test"
+	OFILE=$(echo "stdout-${MFILE%.m}")
+	OPATH=$(echo "./tmp/$OFILE")
+	RFILE="expected-${MFILE%.m}"
+
+	RFILEPATH="./expected-out"
+	MFILEPATH="../bytecodes"
+
+	FPATH_MFILE="$MFILEPATH/$MFILE"
+	FPATH_RFILE="$RFILEPATH/$RFILE"
+
+
+	printf "$MFILE: "
+	cmd="$exe $MFILEPATH/$MFILE"
+	eval $cmd &> $OPATH
+	if [[ -f "$FPATH_RFILE" ]]; then
+		if cmp -s $OPATH $FPATH_RFILE; then
+			printf $GREEN"OK"$RSTCOLOR
+		else
+			printf $RED"FAILED\n"$RSTCOLOR
+			echo "----------------"
+			echo "[GOT]"
+			cat $OPATH
+			echo "[EXPECTED]"
+			cat $FPATH_RFILE
+			echo "------------------"
+		fi
+	else
+		printf $MAG"NO_REF"$RSTCOLOR
+	fi
+	printf "\n"
+done
