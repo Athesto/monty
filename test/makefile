@@ -116,10 +116,10 @@ ll:
 	gcc $(flags) ../*.c -o test
 	./test ../bytecodes/31.m
 
-
-
-
-
+01:
+	clear;
+	gcc $(flags) ../*.c -o test
+	./test ../bytecodes/06.m
 
 
 
