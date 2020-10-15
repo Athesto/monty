@@ -21,9 +21,13 @@ Files containing Monty byte codes usually have the `.m` extension. Most of the i
 
 <div align="center">
 
+
+
 ---
 
 ## Let's start :warning:
+
+</div>
 
 ```
 gcc -Wall -Werror -Wextra -pedantic *.c -o monty
@@ -55,7 +59,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 
 
-</div>
+
 
 
 
